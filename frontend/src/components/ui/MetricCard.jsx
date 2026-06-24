@@ -1,31 +1,30 @@
-import MetricNumber from './MetricNumber.jsx'
-import Crosshair from './Crosshair.jsx'
+import ScrollReveal from './ScrollReveal'
 
-export default function MetricCard({ metric, size = 'md' }) {
-  const decimals = metric.value % 1 !== 0 ? 2 : 0
-  const figureSize =
-    size === 'lg'
-      ? 'text-5xl md:text-6xl lg:text-7xl'
-      : 'text-4xl md:text-5xl'
-
+export default function MetricCard({ metric }) {
   return (
-    <article className="surface-brushed relative overflow-hidden rounded-sm border border-bone/10 p-6 md:p-8">
-      <Crosshair className="absolute right-3 top-3 opacity-60" />
-      <header className="flex items-center justify-between">
+    <ScrollReveal
+      className="border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 p-6"
+    >
+      <div className="flex justify-between">
         <span className="eyebrow">{metric.label}</span>
-        <span className="font-mono text-[11px] text-specs">{metric.period}</span>
-      </header>
-      <div className={`mt-6 ${figureSize}`}>
-        <MetricNumber value={metric.value} unit={metric.unit} decimals={decimals} />
+        <span className="font-mono text-xs text-neutral-500 dark:text-neutral-400">{metric.period}</span>
       </div>
-      <footer className="mt-6 flex items-end justify-between gap-4">
-        <p className="max-w-[14ch] text-sm leading-snug text-specs">{metric.note}</p>
+      <div className="mt-4 flex items-end justify-between">
+        <p className="font-display text-4xl font-black text-neutral-900 dark:text-neutral-100">
+          {metric.value}
+          <span className="font-sans text-3xl font-medium">{metric.unit}</span>
+        </p>
         {metric.growth && (
-          <span className="rounded-sm border border-crimson/40 px-2 py-1 font-mono text-[11px] text-crimson">
+          <p
+            className={`font-mono text-sm font-semibold ${
+              metric.growth.startsWith('+') ? 'text-green-600 dark:text-green-500' : 'text-red-500'
+            }`}
+          >
             {metric.growth}
-          </span>
+          </p>
         )}
-      </footer>
-    </article>
+      </div>
+      <p className="mt-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{metric.note}</p>
+    </ScrollReveal>
   )
 }

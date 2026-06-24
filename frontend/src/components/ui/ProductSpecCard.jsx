@@ -2,19 +2,16 @@ import Crosshair from './Crosshair.jsx'
 
 export default function ProductSpecCard({ item }) {
   return (
-    <article className="group relative border border-bone/10 bg-steel/40 transition-colors hover:border-crimson/40">
+    <article className="group relative border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 transition-colors hover:border-crimson/50 dark:hover:border-crimson/40">
       {/* Product image */}
       {item.image && (
-        <div className="relative h-44 overflow-hidden border-b border-bone/10">
+        <div className="relative h-44 overflow-hidden border-b border-neutral-200 dark:border-neutral-800">
           <img
             src={item.image}
             alt={item.imageAlt || item.name}
             loading="lazy"
-            className="h-full w-full object-cover brightness-75 saturate-90 transition-transform duration-500 group-hover:scale-105 group-hover:brightness-90"
+            className="h-full w-full object-cover brightness-75 saturate-90 transition-transform duration-500 group-hover:scale-105"
           />
-          {/* Fixed dark vignette — stays dark in both light and dark themes */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.15)_0%,rgba(0,0,0,0.55)_100%)]" />
-          <span className="absolute bottom-3 left-4 eyebrow text-crimson">{item.code}</span>
         </div>
       )}
 
@@ -22,14 +19,14 @@ export default function ProductSpecCard({ item }) {
         {!item.image && (
           <span className="eyebrow text-crimson">{item.code}</span>
         )}
-        <Crosshair className="absolute right-3 top-3 opacity-40 transition-opacity group-hover:opacity-100" />
-        <h3 className="font-display text-2xl font-bold tracking-tight text-bone">
+        <Crosshair className="absolute right-3 top-3 opacity-30 transition-opacity group-hover:opacity-80" />
+        <h3 className="font-display text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
           {item.name}
         </h3>
-        <p className="mt-4 font-mono text-[11px] uppercase tracking-wider text-specs">
+        <p className="mt-4 font-mono text-[11px] uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
           {item.spec}
         </p>
-        <p className="mt-3 text-sm leading-relaxed text-bone/75">{item.body}</p>
+        <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">{item.body}</p>
       </div>
     </article>
   )

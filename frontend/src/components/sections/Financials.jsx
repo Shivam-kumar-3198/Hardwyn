@@ -11,7 +11,7 @@ export default function Financials() {
   const maxRevenue = Math.max(...revenueByYear.map((r) => r.value))
 
   return (
-    <section id="financials" className="bg-ink py-24 md:py-32">
+    <section id="financials" className="bg-white dark:bg-neutral-950 py-24 md:py-32">
       <Container>
         <Eyebrow code="H–03" label="Engine of Growth" />
         <ScrollReveal className="mt-8">
@@ -44,7 +44,7 @@ export default function Financials() {
               />
             ))}
           </div>
-          <p className="mt-6 max-w-xl font-mono text-xs text-specs">
+          <p className="mt-6 max-w-xl font-mono text-xs text-neutral-500 dark:text-neutral-400">
             Note: FY24–FY25 figures rounded. FY26 audited at ₹199.86 Cr. Source: company
             filings; refer to filings for full reconciliation.
           </p>

@@ -7,14 +7,14 @@ import { categories } from '../../data/products.js'
 
 export default function Products() {
   return (
-    <section id="products" className="bg-ink py-24 md:py-32">
+    <section id="products" className="bg-white dark:bg-neutral-950 py-24 md:py-32">
       <Container>
         <Eyebrow code="H–05" label="Catalogue" />
         <ScrollReveal className="mt-8">
           <SectionTitle kicker="Four categories. Hundreds of SKUs. One specification standard.">
             What we make,
             <br />
-            <span className="text-crimson">to the millimetre.</span>
+            <span className="text-crimson-deep">to the millimetre.</span>
           </SectionTitle>
         </ScrollReveal>
 
