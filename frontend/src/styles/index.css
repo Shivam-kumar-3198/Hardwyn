@@ -22,15 +22,15 @@
   }
 
   body {
-    background: var(--ink);
-    color: var(--bone);
+    background: var(--bone);
+    color: var(--ink);
     font-family: 'Inter', system-ui, sans-serif;
     font-weight: 400;
     overflow-x: hidden;
   }
 
   ::selection {
-    background: var(--crimson);
+    background: var(--crimson-deep);
     color: var(--cold);
   }
 
@@ -107,17 +107,23 @@ html {
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* Light mode: InvestorConnect brushed-steel panel */
-[data-theme="light"] .surface-brushed {
-  background: linear-gradient(135deg, #f5f5f7 0%, #e8e8eb 100%);
+/* Dark theme overrides */
+[data-theme="dark"] body {
+  background: var(--ink);
+  color: var(--bone);
 }
-[data-theme="light"] .surface-brushed::after {
-  opacity: 0.5;
+[data-theme="dark"] ::selection {
+  background: var(--crimson);
 }
 
-/* Light mode: pulse animation dot stays visible */
-[data-theme="light"] .animate-pulse-slow {
-  opacity: 1;
+/* Dark mode: InvestorConnect brushed-steel panel */
+[data-theme="dark"] .surface-brushed {
+  background:
+    linear-gradient(135deg, #2B2F35 0%, #1F2329 50%, #15171B 100%);
+}
+[data-theme="dark"] .surface-brushed::after {
+  content: '';
+  mix-blend-mode: overlay;
 }
 
 /* animate-pulse-slow utility (slower cadence than default pulse) */
