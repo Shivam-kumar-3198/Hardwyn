@@ -1,0 +1,35 @@
+:root {
+  --ink: #0A0A0B;
+  --steel: #15171B;
+  --gunmetal: #1F2329;
+  --brushed: #2B2F35;
+  --specs: #6B7280;
+  --bone: #E5E5E7;
+  --cold: #F4F4F5;
+  --crimson: #D1242F;
+  --crimson-deep: #A81C25;
+  --crimson-glow: rgba(209, 36, 47, 0.18);
+  --ambience-mid: rgba(43, 47, 53, 0.6);
+
+  --hairline: rgba(229, 229, 231, 0.08);
+  --hairline-strong: rgba(229, 229, 231, 0.16);
+
+  --ease-out-cinema: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="light"] {
+  --ink: #F7F7F8;
+  --steel: #EEEEF0;
+  --gunmetal: #E2E2E5;
+  --brushed: #D5D5D9;
+  --specs: #5C6470;
+  --bone: #111113;
+  --cold: #F7F7F8;
+  --crimson: #C41E28;
+  --crimson-deep: #991820;
+  --crimson-glow: rgba(196, 30, 40, 0.10);
+  --ambience-mid: rgba(180, 185, 200, 0.30);
+
+  --hairline: rgba(17, 17, 19, 0.10);
+  --hairline-strong: rgba(17, 17, 19, 0.20);
+}

@@ -1,0 +1,139 @@
+@import "tailwindcss";
+@import './tokens.css';
+
+/* Wire Tailwind color utilities to CSS vars so they respond to data-theme */
+@theme {
+  --color-ink: var(--ink);
+  --color-steel: var(--steel);
+  --color-gunmetal: var(--gunmetal);
+  --color-brushed: var(--brushed);
+  --color-specs: var(--specs);
+  --color-bone: var(--bone);
+  --color-cold: var(--cold);
+  --color-crimson: var(--crimson);
+  --color-crimson-deep: var(--crimson-deep);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--ink);
+    color: var(--bone);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--crimson);
+    color: var(--cold);
+  }
+
+  *:focus-visible {
+    outline: 1px solid var(--crimson);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .hairline {
+    border-color: var(--hairline);
+  }
+
+  .hairline-strong {
+    border-color: var(--hairline-strong);
+  }
+
+  /* Subtle blueprint grid — section atmosphere */
+  .grid-floor {
+    background-image:
+      linear-gradient(to right, var(--hairline) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--hairline) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  /* Brushed steel surface with subtle noise */
+  .surface-brushed {
+    background:
+      linear-gradient(135deg, #2B2F35 0%, #1F2329 50%, #15171B 100%);
+    position: relative;
+  }
+  .surface-brushed::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.018) 0px,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    mix-blend-mode: overlay;
+  }
+
+  /* Cinematic hero ambience */
+  .ambience-hero {
+    background:
+      radial-gradient(ellipse at 70% 30%, var(--crimson-glow) 0%, transparent 45%),
+      radial-gradient(ellipse at 20% 80%, var(--ambience-mid) 0%, transparent 55%),
+      linear-gradient(180deg, var(--steel) 0%, var(--ink) 100%);
+  }
+
+  /* Spec-sheet eyebrow */
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--specs);
+  }
+
+  /* Crimson hairline accent — used for emphasis */
+  .accent-rule {
+    height: 1px;
+    background: linear-gradient(90deg, var(--crimson) 0%, transparent 100%);
+  }
+}
+
+/* Smooth colour transition when toggling theme */
+html {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Light mode: InvestorConnect brushed-steel panel */
+[data-theme="light"] .surface-brushed {
+  background: linear-gradient(135deg, #f5f5f7 0%, #e8e8eb 100%);
+}
+[data-theme="light"] .surface-brushed::after {
+  opacity: 0.5;
+}
+
+/* Light mode: pulse animation dot stays visible */
+[data-theme="light"] .animate-pulse-slow {
+  opacity: 1;
+}
+
+/* animate-pulse-slow utility (slower cadence than default pulse) */
+@layer utilities {
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
