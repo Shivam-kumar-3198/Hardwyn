@@ -8,6 +8,7 @@ import Financials from './components/sections/Financials.jsx'
 import Vision from './components/sections/Vision.jsx'
 import Products from './components/sections/Products.jsx'
 import InvestorConnect from './components/sections/InvestorConnect.jsx'
+import ShareholderValue from './components/sections/ShareholderValue.jsx'
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Hero />
         <Moat />
         <Financials />
+        <ShareholderValue />
         <Vision />
         <Products />
         <InvestorConnect />
