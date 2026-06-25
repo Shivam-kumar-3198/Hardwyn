@@ -9,7 +9,7 @@ export default function Moat() {
       <Container>
         <Eyebrow code="H–02" label="The Moat" />
 
-        <div className="mt-10 grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
+        <div className="mt-10 grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-20">
           <ScrollReveal>
             <SectionTitle>
               One listed name in
