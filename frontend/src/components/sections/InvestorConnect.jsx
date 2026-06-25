@@ -45,6 +45,7 @@ export default function InvestorConnect() {
             </div>
             <a
               href={`mailto:${company.irEmail}?subject=Investor%20Inquiry%20%E2%80%94%20Hardwyn%20India`}
+              onClick={() => typeof window.gtagSendEvent === 'function' && window.gtagSendEvent(`mailto:${company.irEmail}?subject=Investor%20Inquiry%20%E2%80%94%20Hardwyn%20India`)}
               className="mt-8 inline-flex w-full items-center justify-between border border-crimson-deep bg-crimson-deep px-4 py-3 font-mono text-[11px] uppercase tracking-wider text-white transition-colors hover:bg-crimson hover:border-crimson"
             >
               Reach IR desk
