@@ -78,7 +78,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 36 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.1, ease }}
-              className="text-[clamp(2.5rem,7vw,6.5rem)] font-extrabold leading-tight tracking-tight text-neutral-900 dark:text-neutral-100 transition-colors duration-500"
+              className="text-[clamp(2.8rem,8vw,6.5rem)] font-extrabold leading-snug -tracking-tighter text-neutral-900 dark:text-neutral-100 transition-colors duration-500"
             >
               Built for every space.
               <br />
