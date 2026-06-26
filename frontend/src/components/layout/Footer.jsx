@@ -36,7 +36,7 @@ export default function Footer() {
         <div>
           <p className="eyebrow mb-3">Listing</p>
           <p className="font-mono text-sm text-bone">{company.ticker}</p>
-          <p className="mt-1 font-mono text-xs text-specs">NSE · BSE</p>
+          <p className="mt-1 font-mono text-xs text-specs">N S E/ B S E listed with HARDWYN</p>
         </div>
       </Container>
 

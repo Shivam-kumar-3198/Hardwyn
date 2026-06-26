@@ -214,7 +214,7 @@ export default function Hero() {
             className="w-full border-l-2 border-red-600 bg-white/80 dark:bg-neutral-900/80 px-5 py-3 backdrop-blur-md shadow-lg transition-colors duration-500 sm:w-auto"
           >
             <span className="block font-mono text-[11px] font-bold uppercase tracking-widest text-neutral-900 dark:text-neutral-100 transition-colors duration-500">
-              HARDWYN [NSE/BSE]
+              N S E/ B S E listed with HARDWYN
             </span>
             <div className="mt-1 flex items-center gap-3 font-mono text-xs text-neutral-600 dark:text-neutral-400">
               <span>FY26 Revenue</span>

@@ -40,7 +40,7 @@ export default function InvestorConnect() {
               </div>
               <div>
                 <p className="eyebrow mb-2">Listing</p>
-                <p className="font-mono text-neutral-900 dark:text-neutral-100">NSE · BSE</p>
+                <p className="font-mono text-neutral-900 dark:text-neutral-100">N S E/ B S E listed</p>
               </div>
             </div>
             <a
